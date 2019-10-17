@@ -1,12 +1,17 @@
 import express from "express";
-import validate from "express-validation";
 
-import { getStudent, addStudent } from "../controllers/student.controller";
+import {
+  getStudent,
+  addStudent,
+  addDummyStudent
+} from "../controllers/student.controller";
 const router = express.Router();
 
-import { studentReq } from "../validations/student-request.validator";
+import { inputValidation } from "../validations/student-request.service";
+
+// router.post("/dummy").get(addDummyStudent);
 
 router.route("/").get(getStudent);
-router.route("/").post(validate(studentReq), addStudent);
+router.route("/").post(inputValidation, addStudent);
 
 module.exports = router;

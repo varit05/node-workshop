@@ -12,6 +12,7 @@ export class App {
   public app: Application;
 
   constructor() {
+    // Instanciate express app
     this.app = express();
     this.setting();
     this.middlewares();
@@ -30,8 +31,8 @@ export class App {
    */
   private middlewares() {
     // HTTP request logger middleware
-    this.app.use(morgan("dev"));
-    // parse body params and attach them to req.body
+    // this.app.use(morgan("dev"));
+    // Built-in express middleware : parse body params and attach them to req.body
     this.app.use(express.json());
     this.app.use(express.urlencoded({ extended: true }));
   }

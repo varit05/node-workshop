@@ -12,3 +12,9 @@ app.listen(app.get("port"), () => {
   );
   console.log("Press CTRL-C to stop\n");
 });
+
+// Example
+
+// let a: boolean = true;
+
+// a = 3;

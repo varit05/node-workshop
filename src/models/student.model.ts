@@ -5,4 +5,5 @@ export interface Student {
   email: string;
   city: string;
   birthDate: string;
+  feesPaid: boolean;
 }
