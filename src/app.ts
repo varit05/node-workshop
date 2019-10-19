@@ -1,5 +1,6 @@
 import express, { Application } from "express";
 import morgan = require("morgan");
+require("dotenv").config();
 
 // Application Imports
 const routes = require("./routes");
@@ -31,7 +32,7 @@ export class App {
    */
   private middlewares() {
     // HTTP request logger middleware
-    // this.app.use(morgan("dev"));
+    this.app.use(morgan("dev"));
     // Built-in express middleware : parse body params and attach them to req.body
     this.app.use(express.json());
     this.app.use(express.urlencoded({ extended: true }));
